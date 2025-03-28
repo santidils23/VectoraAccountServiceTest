@@ -32,7 +32,7 @@ El servicio utiliza variables de entorno para configurar su ejecución. Puedes d
 ### Obtener un token de autenticación
 Antes de realizar cualquier operación, es necesario obtener un token JWT con el siguiente endpoint:
 ```bash
-curl -X POST http://localhost:8080/auth/token \
+curl -X POST http://localhost:8081/auth/token \
      -H "Content-Type: application/json" \
      -d '{"username": "admin", "password": "password"}'
 ```
@@ -41,7 +41,7 @@ Este comando devolverá un token JWT que debe incluirse en las siguientes solici
 
 ### Crear una cuenta
 ```bash
-curl -X POST http://localhost:8080/accounts \
+curl -X POST http://localhost:8081/accounts \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer <token>" \
      -d '{"nombre":"John Doe","saldoInicial":1000.00}'
@@ -49,13 +49,13 @@ curl -X POST http://localhost:8080/accounts \
 
 ### Obtener una cuenta por ID
 ```bash
-curl -X GET http://localhost:8080/accounts/{id} \
+curl -X GET http://localhost:8081/accounts/{id} \
      -H "Authorization: Bearer <token>"
 ```
 
 ### Validar una cuenta con un monto
 ```bash
-curl -X GET "http://localhost:8080/accounts/{id}/validate?amount=100.50" \
+curl -X GET "http://localhost:8081/accounts/{id}/validate?amount=100.50" \
      -H "Authorization: Bearer <token>"
 ```
 
