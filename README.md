@@ -44,7 +44,7 @@ Este comando devolverá un token JWT que debe incluirse en las siguientes solici
 curl -X POST http://localhost:8080/accounts \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer <token>" \
-     -d '{"name": "John Doe", "email": "john.doe@example.com"}'
+     -d '{"nombre":"John Doe","saldoInicial":1000.00}'
 ```
 
 ### Obtener una cuenta por ID
